@@ -1,3 +1,6 @@
+// TC -> O(n)
+// SC -> O(1)
+
 public class TwoSumOptimal {
     public static void main(String[] args) {
         int[] numbers = {-1, 0};
