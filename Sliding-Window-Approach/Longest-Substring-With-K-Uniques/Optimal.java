@@ -1,3 +1,6 @@
+// TC -> O(n)
+// SC -> O(k)
+
 import java.util.HashMap;
 
 public class Optimal {
