@@ -10,30 +10,25 @@ public class Optimal {
 
     public static int solution(int[] nums, int target) {
         int n = nums.length;
-        int minLength = Integer.MAX_VALUE;
+        int minLen = Integer.MAX_VALUE;
         int low = 0;
-        int high = 0;
         int sum = 0;
         
-        while (high < n) {
+        for (int high = 0; high < n; high++) {
             sum += nums[high];
 
             while (sum >= target) {
                 int len = high - low + 1;
-                if (len < minLength) {
-                    minLength = len;
-                }
+                minLen = Math.min(minLen, len);
                 sum -= nums[low];
                 low++;
             }
-
-            high++;
         }
 
-        if (minLength == Integer.MAX_VALUE) {
+        if (minLen == Integer.MAX_VALUE) {
             return 0;
         }
 
-        return minLength;
+        return minLen;
     }
 }
