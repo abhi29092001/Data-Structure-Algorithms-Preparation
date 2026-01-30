@@ -1,3 +1,6 @@
+// TC -> O(m+n)
+// SC -> O(1)
+
 public class Optimal {
     public static void main(String[] args) {
         String s = "ADOBECODEBANC";
