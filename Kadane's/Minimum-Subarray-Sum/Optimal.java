@@ -1,3 +1,6 @@
+// TC -> O(n)
+// SC -> O(1)
+
 public class Optimal {
     public static void main(String[] args) {
         int[] a = {3,-4, 2,-3,-1, 7,-5};
