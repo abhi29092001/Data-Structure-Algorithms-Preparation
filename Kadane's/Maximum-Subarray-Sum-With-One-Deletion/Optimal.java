@@ -1,3 +1,6 @@
+// TC -> O(n)
+// SC -> O(1)
+
 public class Optimal {
     public static void main(String[] args) {
         int[] arr = {1,-2,0,3};
