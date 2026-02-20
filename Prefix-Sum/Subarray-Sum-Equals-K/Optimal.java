@@ -26,7 +26,7 @@ public class Optimal {
 
             int sumMinusK = sum - k;
 
-            // If sumMinusK is present in hashmap then give the value of that otherwise give 0, freq of sumMinusK tells how many subarrays are there from 0 to i(where sum variable is current at) whose sum is equal to k
+            // If sumMinusK is present in hashmap then give the value of that otherwise give 0, freq of sumMinusK tells how many subarrays are there ending at i(where sum variable is current at) whose sum is equal to k
             int sumMinusKFreq = freq.getOrDefault(sumMinusK, 0);
 
             // Add sumMinusKFreq in count variable
