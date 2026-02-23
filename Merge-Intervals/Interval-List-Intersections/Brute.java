@@ -11,11 +11,6 @@ public class Brute {
     }
 
     public static int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
-        // edge case - when either of the list is empty then there will be no intersection
-        if (firstList.length == 0 || secondList.length == 0) {
-            return new int[][]{};
-        }
-
         // Data structure to store and return the answer
         ArrayList<int[]> ans = new ArrayList<>();
 
