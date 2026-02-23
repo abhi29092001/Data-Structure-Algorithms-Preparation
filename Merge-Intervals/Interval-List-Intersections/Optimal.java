@@ -32,6 +32,7 @@ public class Optimal {
                 ans.add(new int[]{start, end});
             }
 
+            // Based on ending, i and j will move
             if (end1 <= end2) {
                 i++;
             } else {
