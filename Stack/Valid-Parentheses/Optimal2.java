@@ -22,9 +22,7 @@ public class Optimal2 {
                     return false;
                 }
 
-                // poping last element to compare it with current string character
                 char last = sb.charAt(sb.length() - 1);
-                sb.deleteCharAt(sb.length() - 1);
 
                 // if last element is not matching with the closed one then it is clearly false
                 if (
@@ -33,6 +31,9 @@ public class Optimal2 {
                     (last == '{' && ch != '}')
                 ) {
                     return false;
+                } else {
+                    // poping last element, coz it is matching
+                    sb.deleteCharAt(sb.length() - 1);
                 }
             }
         }

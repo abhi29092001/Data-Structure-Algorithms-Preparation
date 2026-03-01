@@ -24,8 +24,7 @@ public class Optimal {
                     return false;
                 }
 
-                // poping top element to compare it with current string character
-                char top = st.pop();
+                char top = st.peek();
 
                 // if top element is not matching with the closed one then it is clearly false
                 if (
@@ -34,6 +33,9 @@ public class Optimal {
                     (top == '{' && ch != '}')
                 ) {
                     return false;
+                } else {
+                    // poping top element, coz it is matching
+                    st.pop();
                 }
             }
         }
