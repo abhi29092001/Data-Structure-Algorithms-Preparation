@@ -1,4 +1,5 @@
-// TC -> O(n)
+// TC -> O(n + m)
+// SC -> O(m)
 
 import java.util.*;
 
@@ -15,7 +16,7 @@ public class Optimal {
 
         // To store the element -> nextGreaterElement
         Map<Integer, Integer> map = new HashMap<>(); 
-        
+
         int[] resArray = new int[nums1.length];
 
         for (int j = 0; j < nums2.length; j++) {
