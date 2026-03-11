@@ -1,3 +1,6 @@
+// TC -> O(n ^ 2)
+// SC -> O(1)
+
 public class Brute {
     public static void main(String[] args) {
         String s = "abbccdda";
