@@ -1,3 +1,6 @@
+// TC -> O(n)
+// SC -> O(1)
+
 public class Brute {
     public static void main(String[] args) {
         String text = "loonbalxballpoon";
