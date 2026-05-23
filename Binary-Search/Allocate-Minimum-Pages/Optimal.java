@@ -1,3 +1,6 @@
+// TC -> O(n * log m)
+// SC -> O(1)
+
 public class Optimal {
     public static void main(String[] args) {
         int[] arr = {12, 34, 67, 90};
