@@ -1,4 +1,4 @@
-// TC -> O(logm * n)
+// TC -> O(logm + logn)
 // SC -> O(1)
  
 public class Optimal {
