@@ -21,9 +21,9 @@ public class Optimal {
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (helper(matrix, k, mid, n) < k) {
+            if (helper(matrix, mid, n) < k) {
                 low = mid + 1;
-            } else if (helper(matrix, k, mid, n) >= k) {
+            } else if (helper(matrix, mid, n) >= k) {
                 result = mid;
                 high = mid - 1;
             }
@@ -32,7 +32,7 @@ public class Optimal {
         return result;
     }
 
-    public static int helper(int[][] matrix, int k, int mid, int n) {
+    public static int helper(int[][] matrix, int mid, int n) {
         int row = n - 1;
         int col = 0;
         int count = 0;
