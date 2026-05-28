@@ -21,9 +21,11 @@ public class Optimal {
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (helper(matrix, mid, n) < k) {
+            int ans = helper(matrix, mid, n);
+
+            if (ans < k) {
                 low = mid + 1;
-            } else if (helper(matrix, mid, n) >= k) {
+            } else if (ans >= k) {
                 result = mid;
                 high = mid - 1;
             }
