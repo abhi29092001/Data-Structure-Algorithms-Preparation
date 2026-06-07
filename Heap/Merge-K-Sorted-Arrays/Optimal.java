@@ -30,18 +30,16 @@ public class Optimal {
         ArrayList<Integer> result = new ArrayList<>();
         
         // O(m) - time
-        for (int col = 0; col < 1; col++) {
-            for (int row = 0; row < m; row++) {
-                minHeap.add(new int[]{mat[row][col], row, col});
-            }
+        for (int row = 0; row < m; row++) {
+            minHeap.add(new int[]{mat[row][0], row, 0});
         }
         
         // O((m * n) * logm) - time 
         while (!minHeap.isEmpty()) {
-            int value = minHeap.peek()[0];
-            int row = minHeap.peek()[1];
-            int col = minHeap.peek()[2];
-            minHeap.poll();
+            int[] top = minHeap.poll();
+            int value = top[0];
+            int row = top[1];
+            int col = top[2];
             result.add(value);
             col++;
             
