@@ -1,4 +1,4 @@
-// TC -> O(m * n + n logn)
+// TC -> O(m * n * log(m * n))
 // SC -> O(m * n)
 
 import java.util.*;
@@ -28,7 +28,7 @@ public class Brute {
             }
         }
         
-        // O(n logn) - time
+        // O(m*n log(m*n)) - time
         Collections.sort(result);
         
         return result;
