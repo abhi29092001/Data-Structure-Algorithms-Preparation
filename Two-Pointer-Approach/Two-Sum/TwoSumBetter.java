@@ -1,41 +1,34 @@
 // TC -> O(n)
 // SC -> O(n)
 
-import java.util.HashMap;
+import java.util.*;
 
 public class TwoSumBetter {
     public static void main(String[] args) {
-        int[] numbers = {-1, 0};
+        int[] nums = {-1, 0};
         int target = -1;
-        int[] result = twoSum(numbers, target);
-
-        if (result.length == 0) {
-            System.out.println("Not found");
-        } else {
-            for (int el : result) {
-                System.out.print(el + " ");
-            }
-        }
+        System.out.println(twoSum(nums, target));
     }
 
-    public static int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
         int[] result = new int[2];
-        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < numbers.length; i++) {
-            hashmap.put(numbers[i], i);
+        for (int i = 0; i < n; i++) {
+            map.put(nums[i], i);
         }
 
-        for (int i = 0; i < numbers.length; i++) {
-            int required = target - numbers[i];
+        for (int i = 0; i < n; i++) {
+            int remaining = target - nums[i];
 
-            if (hashmap.containsKey(required)) {
-                result[0] = i + 1;
-                result[1] = hashmap.get(required) + 1;
-                return result;
+            if (map.containsKey(remaining) && map.get(remaining) != i) {
+                result[0] = i;
+                result[1] = map.get(remaining);
+                break;
             }
         }
 
-        return new int[] {};
+        return result;
     }
 }

@@ -1,38 +1,34 @@
 // TC -> O(n)
-// SC -> O(1)
+// SC -> O(n)
+
+// one pass solution
+
+import java.util.*;
 
 public class TwoSumOptimal {
     public static void main(String[] args) {
-        int[] numbers = {-1, 0};
+        int[] nums = {-1, 0};
         int target = -1;
-        int[] result = twoSum(numbers, target);
-
-        if (result.length == 0) {
-            System.out.println("Not found");
-        } else {
-            for (int el : result) {
-                System.out.print(el + " ");
-            }
-        }
+        System.out.println(twoSum(nums, target));
     }
 
-    public static int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
         int[] result = new int[2];
-        int i = 0;
-        int j = numbers.length - 1;
+        Map<Integer, Integer> map = new HashMap<>();
 
-        while (i < j) {
-            if ((numbers[i] + numbers[j]) == target) {
-                result[0] = i + 1;
-                result[1] = j + 1;
-                return result;
-            } else if (numbers[i] + numbers[j] < target) {
-                i++;
-            } else if (numbers[i] + numbers[j] > target) {
-                j--;
+        for (int i = 0; i < n; i++) {
+            int remaining = target - nums[i];
+
+            if (map.containsKey(remaining)) {
+                result[0] = i;
+                result[1] = map.get(remaining);
+                break;
+            } else {
+                map.put(nums[i], i);
             }
         }
 
-        return new int[] {};
+        return result;
     }
 }

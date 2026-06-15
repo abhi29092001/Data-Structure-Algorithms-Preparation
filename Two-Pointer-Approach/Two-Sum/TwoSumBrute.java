@@ -3,34 +3,25 @@
 
 public class TwoSumBrute {
     public static void main(String[] args) {
-        int[] numbers = {-1, 0};
-        int target = -1;
-        int[] result = twoSum(numbers, target);
-
-        if (result.length == 0) {
-            System.out.println("Not found");
-        } else {
-            for (int el : result) {
-                System.out.print(el + " ");
-            }
-        }
+        int[] nums = {2,7,11,15};
+        int target = 9;
+        System.out.println(twoSum(nums, target));;
     }
 
-    public static int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
         int[] result = new int[2];
 
-        for (int i = 0; i < numbers.length; i++) {
-            int required = target - numbers[i];
-
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[j] == required) {
-                    result[0] = i + 1;
-                    result[1] = j + 1;
-                    return result;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] + nums[j] == target) {
+                    result[0] = i;
+                    result[1] = j;
+                    break;
                 }
             }
         }
 
-        return new int[] {};
+        return result;
     }
 }
