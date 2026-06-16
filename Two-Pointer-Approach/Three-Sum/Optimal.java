@@ -1,5 +1,5 @@
 // TC -> O(n^2)
-// SC -> O(1)
+// SC -> O(logn)- recursive stack space used during sorting
 
 import java.util.List;
 import java.util.Arrays;
@@ -7,46 +7,61 @@ import java.util.ArrayList;
 
 public class Optimal {
     public static void main(String[] args) {
-        int[] nums = {0,1,1};
+        int[] nums = {-1,0,1,2,-1,-4};
         System.out.println(solution(nums));
     }
 
     public static List<List<Integer>> solution(int[] nums) {
+        // Logic-
+        // need triplets whose sum is 0
+        // we'll take 2 elements sum and find out whether its equal to negative of first -> a[j]+a[k] = -a[i] is same as a[i]+a[j]+a[k] = 0
+        // sort elements so that we can use 2 pointers technique over here
+        // make sure you dont consider duplicates for indices i,j,k
+        // store triplets once you get it
+        // then return final result
+
+
         int n = nums.length;
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
 
-        for (int i = 0; i < n-2; i++) {
-            if (i > 0 && (nums[i] == nums[i-1])) {
+        for (int i = 0; i < n; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            
-            int target = -1 * nums[i];
-            int left = i + 1;
-            int right = n - 1;
 
-            while (left < right) {
-                int sum = nums[left] + nums[right];
+            int j = i + 1;
+            int k = n - 1;
+            int target = -1 * nums[i];
+
+            while (j < k) {
+                List<Integer> triplets = new ArrayList<>();
+                int sum = nums[j] + nums[k];
 
                 if (sum < target) {
-                    left++;
+                    j++;
                 } else if (sum > target) {
-                    right--;
+                    k--;
                 } else {
-                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    left++;
-                    right--;
+                    triplets.add(nums[i]);
+                    triplets.add(nums[j]);
+                    triplets.add(nums[k]);
+                    j++;
+                    k--;
 
-                    while (left < (n-1) && nums[left] == nums[left-1]) {
-                        left++;
+                    while (j < n && nums[j] == nums[j - 1]) {
+                        j++;
                     }
 
-                    while (right > 0 && nums[right] == nums[right+1]) {
-                        right--;
+                    while (k > 0 && k < n - 1 && nums[k] == nums[k + 1]) {
+                        k--;
                     }
                 }
+
+                if (triplets.size() > 0) result.add(triplets);
             }
         }
+
         return result;
     }
 }
