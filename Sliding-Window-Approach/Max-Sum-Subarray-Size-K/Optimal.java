@@ -9,6 +9,15 @@ public class Optimal {
     }
 
     public static int solution(int[] arr, int k) {
+        // Logic -
+        // its clearly mentioned that we have to use sliding window in this, as ques says we need to find max sum subarray of size k
+        // first find sum of first window
+        // then compare with maxsum if its maximum take it and move forward
+        // before incrementing low, make sure you remove previous low from sum
+        // before adding high into sum, check if it still lies in array boundary
+        // keep on doing same thing till high doesnt exceeds n
+        // break and return maxsum
+
         int n = arr.length;
         int maxSum = 0;
         int sum = 0;
@@ -24,9 +33,9 @@ public class Optimal {
                 maxSum = sum;
             }
             
-            low++;
             high++;
-            sum -= arr[low - 1];
+            sum -= arr[low];
+            low++;
             
             if (high == n) {
                 break;
@@ -34,6 +43,7 @@ public class Optimal {
                 sum += arr[high]; 
             }
         }
+
         return maxSum;
     }
 }

@@ -9,15 +9,22 @@ public class Brute {
     }
 
     public static int solution(int[] arr, int k) {
+        // Logic-
+        // for every ith iteration j will start from i+1 and run till k, coz we need to find a window of size k
+        // if sum is greater than maxSum then store it and move ahead
+        // finally return maxsum
+
         int n = arr.length;
         int maxSum = 0;
         int sum = 0;
         
         for (int i = 0; i < n - k + 1; i++) {
             sum = arr[i];
+
             for (int j = i + 1; j < k + i; j++) {
                 sum += arr[j];
             }
+
             if (sum > maxSum) {
                 maxSum = sum;
             }
