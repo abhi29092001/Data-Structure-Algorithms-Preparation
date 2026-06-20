@@ -1,4 +1,4 @@
-// TC -> O(n)
+// TC -> O(n) - 2 pass
 // SC -> O(1)
 
 class ListNode {
