@@ -8,15 +8,18 @@ public class Optimal {
     }
 
     public static int maxSubArray(int[] nums) {
+        // Logic-
+        // used kadane's algo, coz we need to find maxsum of subarray(-ves are also there in array)
+        // at current index we'll check if after taking it and adding it to best will give me better result or dropping my prev best and taking only current element will result in best
+        // after taking maximum best, compare with ans, if ans is smaller then assign best to ans
+        // after completing loop, return ans 
+
         int n = nums.length;
         int ans = nums[0];
         int best = nums[0];
 
         for (int i = 1; i < n; i++) {
-            int val1 = best + nums[i];
-            int val2 = nums[i];
-
-            best = Math.max(val1, val2);
+            best = Math.max(nums[i], best + nums[i]);
             ans = Math.max(ans, best);
         }
 
