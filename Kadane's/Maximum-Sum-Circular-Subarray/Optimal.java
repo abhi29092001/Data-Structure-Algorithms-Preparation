@@ -8,6 +8,13 @@ public class Optimal {
     }
     
     public static int maxSubarraySumCircular(int[] nums) {
+        // Logic-
+        // This is a circular array
+        // in this we need to track both maxsum and minsum, means maxending sum and minending sum
+        // and in this we need to remove minimum sum from the array to get max sum subarray
+        // if all elements are -ve then return maxSum directly, coz sum-minsum will be 0
+        // but if all elements are not -ve then check which one is maximum, maxsum or sum-minsum 
+
         int n = nums.length;
         int maxSum = nums[0];
         int minSum = nums[0];
