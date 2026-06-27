@@ -9,6 +9,9 @@ public class Brute {
     }
 
     public static int subarraySum(int[] nums, int k) {
+        // Logic-
+        // typical brute force, finding out sum from scratch for every ith iteration 
+
         int count = 0;
         int n = nums.length;
 
