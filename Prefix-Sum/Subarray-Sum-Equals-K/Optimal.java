@@ -11,6 +11,13 @@ public class Optimal {
     }
 
     public static int subarraySum(int[] nums, int k) {
+        // Logic-
+        // find sum till current element
+        // then minus k from sum and check whether that part is available and how many times in the hashmap
+        // pull out the freq and add in the count
+        // then store sum in the hashmap with its freq
+        // keep on repeating until loop ends  
+
         int count = 0;
         int sum = 0;
         int n = nums.length;
