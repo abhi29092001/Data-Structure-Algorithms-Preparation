@@ -10,6 +10,14 @@ public class Optimal {
     }
 
     public static int findMaxLength(int[] nums) {
+        // Logic-
+        // finding out the diff between zeroes and ones
+        // checking whether that diff exists in hashmap if yes that means it was seen before as well
+        // take out the index of that diff and reduce from i to get the length of subarray with equal 1 and 0
+        // if doesn't exist then put into hashmap
+        // keep on doing until loop ends
+        // return maxLen
+
         int n = nums.length;
         int maxLen = 0;
 

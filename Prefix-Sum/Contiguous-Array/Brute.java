@@ -8,6 +8,12 @@ public class Brute {
     }
 
     public static int findMaxLength(int[] nums) {
+        // Logic-
+        // typical brute force approach, running two loops, incrementing count of zeros and ones
+        // whenever count of zeros and ones becomes equal we'll put it in maxlen 
+        // keep on doing same thing until loop ends
+        // return maxLen
+
         int n = nums.length;
         int maxLen = 0;
 
