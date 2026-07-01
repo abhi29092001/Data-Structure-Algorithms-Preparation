@@ -11,6 +11,13 @@ public class Optimal {
     }
 
     public static int[][] insert(int[][] intervals, int[] newInterval) {
+        // Logic-
+        // create new arraylist and insert new interval in it
+        // insert new interval according to start time
+        // coz of that we dont need to sort array
+        // handle edge case, if array is empty
+        // rest is same as merge interval
+
         int n = intervals.length;
 
         // first push back all the intervals and new interval in the arraylist in a sorted manner to avoid custom sorting
