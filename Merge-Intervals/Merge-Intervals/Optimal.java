@@ -11,6 +11,14 @@ public class Optimal {
     }
 
     public static int[][] merge(int[][] intervals) {
+        // Logic-
+        // sort array by start time and then check if curr start is lesser than end of previous. If so, that means overlapping intervals
+        // merge them by taking maximum end and check again with next
+        // if not overlapping push it into result array
+        // keep on doing until loop ends
+        // there will be one pair left, so need to do it manually
+        // return result
+
         int n = intervals.length;
 
         // Sorting using lamba exp - normal sorting will not work on 2D array...that's why using comparator(lambda exp)
