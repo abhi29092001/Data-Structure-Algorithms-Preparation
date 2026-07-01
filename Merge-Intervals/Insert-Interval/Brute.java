@@ -12,6 +12,10 @@ public class Brute {
     }
 
     public static int[][] insert(int[][] intervals, int[] newInterval) {
+        // Logic-
+        // create new arraylist and push new interval to it
+        // rest is same as merge intervals
+        
         int n = intervals.length;
 
         // first push back the all the intervals and new interval in the newly created arraylist
