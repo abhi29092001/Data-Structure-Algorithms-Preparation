@@ -15,12 +15,12 @@ public class Optimal {
         // return true
 
         int n = arr.length;
-        
+    
         Arrays.sort(arr, (a, b) -> a[0] - b[0]);
         
         int start1 = arr[0][0];
         int end1 = arr[0][1];
-        
+
         for (int i = 1; i < n; i++) {
             int start2 = arr[i][0];
             int end2 = arr[i][1];
