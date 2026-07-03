@@ -38,14 +38,14 @@ public class Brute {
         rooms.add(new int[]{meetings[0][0], meetings[0][1]});
         
         for (i = 1; i < n; i++) {
-            int start = meetings[i][0];
-            int end = meetings[i][1];
+            int start1 = meetings[i][0];
+            int end1 = meetings[i][1];
             
-            if (rooms.get(rooms.size() - 1)[1] <= start) {
+            if (rooms.get(rooms.size() - 1)[1] <= start1) {
                 rooms.removeLast();
             }
             
-            rooms.add(new int[]{start, end});
+            rooms.add(new int[]{start1, end1});
             
             if (rooms.size() > 1) {
                 Collections.sort(rooms, (a, b) -> b[1] - a[1]);
