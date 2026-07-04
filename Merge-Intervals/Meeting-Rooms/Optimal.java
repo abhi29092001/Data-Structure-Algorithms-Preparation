@@ -11,6 +11,13 @@ public class Optimal {
     }
     
     public static int minMeetingRooms(int[] start, int[] end) {
+        // Logic-
+        // we'll use two pointers to keep track of how many min. rooms are required to complete all meetings and how many rooms are currently in use
+        // sort both arrays
+        // check condition if start is less then ending time that means a room will be used to complete the meeting
+        // otherwise reducing count, means prev meeting has been completed
+        // in the end return rooms
+
         int n = start.length; // size of both arrays is same that's why we can take any arrays length to iterate till that length
         
         int i = 0;
