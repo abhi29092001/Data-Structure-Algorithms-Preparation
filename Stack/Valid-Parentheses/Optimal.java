@@ -10,6 +10,10 @@ public class Optimal {
     }
 
     public static boolean isValid(String s) {
+        // Logic -
+        // we'll be requiring last element if the current element is closing bracket to check whether they are matching brackets or not
+        // so, stack is the best data structure for this problem
+
         Stack<Character> st = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
