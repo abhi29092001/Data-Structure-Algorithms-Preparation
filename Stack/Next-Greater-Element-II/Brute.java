@@ -8,6 +8,10 @@ public class Brute {
     }
 
     public static int[] nextGreaterElements(int[] nums) {
+        // Logic-
+        // outer loop will run normally
+        // inner loop will move circularly 
+
         int n = nums.length;
         // To store the next greater element
         int[] resArray = new int[n];
