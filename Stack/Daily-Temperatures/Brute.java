@@ -8,6 +8,12 @@ public class Brute {
     }
     
     public static int[] dailyTemperatures(int[] temperatures) {
+        // Logic-
+        // using two loops, inner loop will perform main logic
+        // inner loop will keep on checking for greater element and count also keeps on incrementing
+        // once greater element is found, store ans in array, set boolean to true and break out of loop
+        // keep on repeating, we can also avoid last if check coz by default array store 0 only
+
         int n = temperatures.length;
         int[] resArray = new int[n];
 

@@ -10,6 +10,14 @@ public class Optimal {
     }
     
     public static int[] dailyTemperatures(int[] temperatures) {
+        // Logic-
+        // using stack coz we require next greater element only, top will behave as next element(maybe greater, maybe lesser)
+        // start pushing from back side coz we need next greater element
+        // if current is greater that means element in stack is of no use pop it off
+        // otherwise element is of use and calculate index diff
+        // push element in stack
+        // keep on repeating
+
         int n = temperatures.length;
         int[] resArray = new int[n];
         Stack<Integer> st = new Stack<>();
