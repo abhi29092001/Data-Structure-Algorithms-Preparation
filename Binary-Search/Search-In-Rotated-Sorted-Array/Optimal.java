@@ -12,11 +12,11 @@ public class Optimal {
         // Logic-
         // 1. There are two parts in the array
         // 2. Find mid and check if nums[mid] is equal to target
-        // 3. check whether nums[mid] lies in part 1 or part 2 if not equals to target
+        // 3. check whether nums[mid] lies in part 1(left sorted) or part 2(right sorted) if not equals to target
         // 4. if it lies in part 1 then, if nums[mid] < target...move to the right, coz bigger elements will be in the right direction only
         // 5. if it lies in part 1 then, if nums[mid] > target...check if a[0] > target and if its true then move to right otherwise move to left.
         // 6. if it lies in part 2 then, if nums[mid] > target...move to the left, coz smaller elements will be in the left direction only
-        // 7. if it lies in part 2 then, if nums[mid] < target...check if a[n-1] > target and if its true then move to left otherwise move to right.
+        // 7. if it lies in part 2 then, if nums[mid] < target...check if a[n-1] > target and if its true then move to right otherwise move to left.
         // 8. if element is not there then, return -1
 
         int n = nums.length;
