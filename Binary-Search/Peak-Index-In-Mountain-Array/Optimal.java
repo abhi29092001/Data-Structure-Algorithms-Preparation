@@ -30,5 +30,18 @@ public class Optimal {
         }
 
         return peakIndex;
+
+        // another solution - if next is greater move low, if previous is greater move high, if none is greater that means you are at peak return mid
+        // while (low <= high) {
+        //     int mid = (low + high) / 2;
+
+        //     if (arr[mid] < arr[mid + 1]) {
+        //         low = mid + 1;
+        //     } else if (arr[mid] < arr[mid - 1]) {
+        //         high = mid - 1;
+        //     } else {
+        //         return mid;
+        //     }
+        // }
     }
 }
