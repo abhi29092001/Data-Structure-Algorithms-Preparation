@@ -20,12 +20,7 @@ public class Brute implements MountainArray {
 
     @Override
     public int get(int index) {
-        for (int i = 0; i < length(); i++) {
-            if (i == index) {
-                return this.arr[i];
-            }
-        }
-        return -1;
+        return this.arr[index];
     }
 
     public static void main(String[] args) {

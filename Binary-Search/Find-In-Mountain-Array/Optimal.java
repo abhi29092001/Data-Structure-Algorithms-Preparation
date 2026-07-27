@@ -20,17 +20,12 @@ public class Optimal implements MountainArray {
 
     @Override
     public int get(int index) {
-        for (int i = 0; i < length(); i++) {
-            if (i == index) {
-                return this.arr[i];
-            }
-        }
-        return -1;
+        return this.arr[index];
     }
 
     public static void main(String[] args) {
         MountainArray mountainArr = new Optimal(new int[]{0,1,2,4,2,1});
-        int target = 3;
+        int target = 2;
 
         System.out.println(Optimal.findInMountainArray(target, mountainArr));
     }   
